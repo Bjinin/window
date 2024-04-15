@@ -1,0 +1,62 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-color: #008080;
+    /* 배경 이미지 크기 설정 */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.content {
+    color: white; /* 텍스트 색상 */
+    width: 100%;
+    position: fixed;
+    min-height: calc(100%-60px);
+    padding-bottom: 20px;
+}
+
+footer {
+    /* 작업표시줄 스타일 */
+    background-color:#c3c3c3; /* 배경색 */
+    color: white; /* 텍스트 색상 */
+   position: fixed;
+     bottom: 0;
+    width: 100%;
+    height: 4vh;
+    box-sizing: border-box;
+}
+footer>img{
+    margin-top: 1vh;
+    margin-left: 1vh;
+    width: 4vw;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    table-layout: auto; 
+    border: none;
+    padding: 0;
+    text-align: center;
+}
+
+td {
+    width: 5vw;
+   ?
+    padding: 0;
+    height: 13.5vh;
+    font-size: 1vw
+}
+.cell-content{
+    text-align: center;
+}
+.cell-content>img{
+    width: 3vw;
+}

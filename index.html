@@ -1,24 +1,87 @@
+<!-- HTML 코드 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="window.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경화면 웹 페이지</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jQuery 및 jQuery UI 라이브러리 추가 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 </head>
 <body>
+    <div class="background"></div>
+    <div class="content">
+       <table>
+        <tr>
+            <td><div class="cell-content"><img src="img/trash.png" class="icon"><br>휴지통</div></td>
+            <td><div class="cell-content"><img src="img/folder.png" class="icon"><br>폴더</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td><div class="cell-content"><img src="img/computer.png" class="icon"><br>내 컴퓨터</div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td><div class="cell-content"><img src="img/internet.png" class="icon"><br>인터넷</div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+         <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+         <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+         <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <!-- 나머지 셀들은 이와 같은 방식으로 추가합니다. -->
+    </table>
+    </div>
+    <footer>
+       <img src="img/start.png">
+    </footer>
     
-    <div id="post">
-        <div id="pnav">
-          rebloggers name
-          <img class="pbuttons" src="https://31.media.tumblr.com/ecad6f31db9fc8bf8d14f2214dbe5a4b/tumblr_inline_naz3sihqg71sbfysw.png">
-          <img class="pbuttons" src="https://media.tumblr.com/3c40921397a12ca56e9185b816e8e280/tumblr_inline_nb0y19IrNy1sbfysw.png">
-          <img class="pbuttons" src="https://media.tumblr.com/74cab287d11e5d00036c09c75101a375/tumblr_inline_nb0y13nRs91sbfysw.png">
-        </div>
-        <img id="content" src="http://scontent.cdninstagram.com/t51.2885-15/e35/p320x320/13285437_811511032318640_1368215630_n.jpg?ig_cache_key=MTI2MzYxMjIwOTYyMDkwMTU1MQ%3D%3D.2"
-      />
-        <div id="noter">
-          <div class="notebox">666 note(s)</div>
-          <div class="notebox">op's blog</div>
-        </div>
-      </div>
+    
+    
+   <script>
+$(function() {
+    // 각 .cell-content를 draggable로 만들기
+    $('.cell-content').draggable({
+        containment: 'table',
+        cursor: 'move',
+        revert: true
+    });
+
+    // 각 <td> 요소를 droppable 영역으로 설정하기
+    $('td').droppable({
+        drop: function(event, ui) {
+            // 드롭된 요소의 위치를 이동
+            var $droppedCell = $(this);
+            var $draggedElement = ui.draggable;
+
+            // 만약 셀 내에 이미지가 없는 경우에만 드롭을 허용
+            if (!$droppedCell.has('img').length) {
+                $droppedCell.append($draggedElement.css({
+                    top: 0,
+                    left: 0
+                }));
+            }
+        }
+    });
+});
+</script>
+
 </body>
 </html>
