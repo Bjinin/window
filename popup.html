@@ -2,25 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-    
-    <div id="post">
-        <div id="pnav">
-          rebloggers name
-          <img class="pbuttons" src="https://31.media.tumblr.com/ecad6f31db9fc8bf8d14f2214dbe5a4b/tumblr_inline_naz3sihqg71sbfysw.png">
-          <img class="pbuttons" src="https://media.tumblr.com/3c40921397a12ca56e9185b816e8e280/tumblr_inline_nb0y19IrNy1sbfysw.png">
-          <img class="pbuttons" src="https://media.tumblr.com/74cab287d11e5d00036c09c75101a375/tumblr_inline_nb0y13nRs91sbfysw.png">
+    <img src="img/trash.png" alt="Your Image" id="imagePopup">
+    <div id="popupContainer" class="popupContainer">
+        <div class="popupContent">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="post">
+              <div id="pnav">
+                rebloggers name
+                <img class="pbuttons" src="https://31.media.tumblr.com/ecad6f31db9fc8bf8d14f2214dbe5a4b/tumblr_inline_naz3sihqg71sbfysw.png">
+                <img class="pbuttons" src="https://media.tumblr.com/3c40921397a12ca56e9185b816e8e280/tumblr_inline_nb0y19IrNy1sbfysw.png">
+                <img class="pbuttons" src="https://media.tumblr.com/74cab287d11e5d00036c09c75101a375/tumblr_inline_nb0y13nRs91sbfysw.png">
+              </div>
+              <img id="content" src=""/>
+              <div id="noter">
+                <div class="notebox1">YES</div>
+                <div class="notebox2">NO</div>
+              </div>
+            </div>
+            
+            
+            
         </div>
-        <img id="content" src=""/>
-        <div id="noter">
-          <div class="notebox">666 note(s)</div>
-          <div class="notebox">op's blog</div>
-        </div>
-      </div>
-      <footer>
-          
-      </footer>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
