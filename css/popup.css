@@ -42,7 +42,24 @@
     border-bottom: 1px solid #000000;
     border-right: 1px solid #000000;
 }
-  
+ #post{
+    background: #C0C0C0;
+    margin: auto;
+    width: 300px;
+    height: auto;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
+   #pnav{
+    margin: 2px 0px 0px 2px;
+    background-color: #00007f;
+    width: 98%;
+    height: 16px;
+    color: #FFFFFF;
+    padding: 0px 0px 2px 2px;
+  }
 .pnav{
     margin: 1px 0px 0px 1px;
     background-color: #00007f;
@@ -68,7 +85,17 @@
     border-bottom: 1px solid #FFFFFF;
     border-right: 1px solid #FFFFFF;
 }
-  
+  #content{
+    width: 97%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 0%;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+  }
 .noter{
     margin: 0% 1% 1% 1%;
     width: auto;
@@ -81,6 +108,18 @@
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
+ #noter{
+    margin: 0% 1% 1% 1%;
+    width: auto;
+    background: #C0C0C0;
+    
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row; 
+    flex-direction: row;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
   
 .notebox1{  
     /* flex-grow: 0; */
@@ -120,3 +159,15 @@
     border-bottom: 2px solid #FFFFFF;
     border-right: 2px solid #FFFFFF;
 }
+ .notebox{  
+    flex-grow: 1;
+    margin: auto;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 0px;
+    color: #000000;
+    border-top: 1px solid #929292;
+    border-left: 1px solid #929292;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+  }
