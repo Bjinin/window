@@ -65,7 +65,8 @@
         <script src="popup.js"></script>
         </div>
     <footer>
-       <img src="img/start.png">
+       <img id="start" src="img/start.png">
+       <div id="clock"></div>
     </footer>
     
     
@@ -96,6 +97,18 @@ $(function() {
         }
     });
 });
+       
+      function showTime() {
+    var date = new Date(); // 현재 날짜와 시간을 가져옵니다.
+    // 현재 시간을 로케일 형식으로 변환하되, 옵션을 사용하여 시간과 분만 표시하고 초는 표시하지 않습니다.
+    var time = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+
+    document.getElementById('clock').innerText = time; // 'clock' ID를 가진 요소에 시간을 표시합니다.
+
+    setTimeout(showTime, 1000); // 1초마다 함수를 다시 실행합니다.
+}
+
+showTime(); // 실시간 시계를 시작합니다
 </script>
       
 
