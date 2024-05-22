@@ -20,12 +20,13 @@
        <table>
         <tr>
             <td><div class="cell-content"></div><button onclick="openPopup()"><div class="cell-content"><img src="img/trash.png" alt="Your Image" class="icon"><br>휴지통</button>
-                <div class="cell-content">
+                <div class="popup">
                     <div id="popupContainer" class="popupContainer">
                         <div class="popupContent">
-                            <span class="close" onclick="closePopup()">&times;</span>
+                            <!--<span class="close" onclick="closePopup()">&times;</span>-->
                             <p>여기는 -- 입니다.^^</p>
                             <!--팝업창 안에 다른 기능을 추가하려면 여기에-->
+                            <button id="close-popup" class="close-button">X</button>
                         </div>
                     </div>
                 </div>   
@@ -72,9 +73,17 @@
     </footer>
     
     
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>    
 <script>
 $(function() {
+    // 팝업창을 draggable로 만들기
+    $('.popup').draggable({
+        //handle: '.popup-header'
+    }).resizable({
+        aspectRatio: false // 팝업창을 일정한 비율로 조절 가능하게 설정
+    });
+    
     // 각 .cell-content를 draggable로 만들기
     $('.cell-content').draggable({
         containment: 'table',
@@ -121,6 +130,11 @@ function closePopup() {
     var popup = document.getElementById("popupContainer");
     popup.style.display = "none";
 }
+
+// 팝업창 닫기 (팝업창 내부의 버튼 클릭 시 팝업창 숨기기)
+$('#close-popup').on('click', function() {
+        $('#popupContainer').hide();
+});
 </script>
       
 
