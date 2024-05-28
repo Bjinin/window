@@ -3,42 +3,33 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배경화면 웹 페이지</title>
     <link rel="stylesheet" href="css/main.css">
     <!-- jQuery 및 jQuery UI 라이브러리 추가 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="window.css" />
- 
-
+    <script src="js/script.js"></script>
+    <script src="popup.html"></script>
 </head>
 <body>
     <div class="background"></div>
     <div class="content">
        <table>
         <tr>
-            <td><div class="cell-content"></div><button onclick="openPopup()"><div class="cell-content"><img src="img/trash.png" alt="Your Image" class="icon"><br>휴지통</button>
-                <div class="cell-content">
-                    <div id="popupContainer" class="popupContainer">
-                        <div class="popupContent">
-                            <span class="close" onclick="closePopup()">&times;</span>
-                            <p>여기는 -- 입니다.^^</p>
-                            <!--팝업창 안에 다른 기능을 추가하려면 여기에-->
-                        </div>
-                    </div>
-                </div>   
+            <td><div class="cell-content" onclick="view_layer('layer1');"><img src="img/trash.png" alt="Your Image" class="icon"><br>휴지통</div>
             </td>
-            <td><div class="cell-content"></div><button onclick="openPopup()"><img src="img/folder.png" alt="folder" class="icon"><br>폴더</button>
+            <td><div class="cell-content" onclick="view_layer('layer2');"><img src="img/folder.png" alt="folder" class="icon"><br>폴더</div>
             </td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
-            <td><div class="cell-content"></div><button onclick="openPopup()"><img src="img/computer.png" alt="computer" class="icon"><br>내 컴퓨터</td></button><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td><div class="cell-content"  onclick="view_layer('layer3');"><img src="img/computer.png" alt="computer" class="icon"><br>내 컴퓨터</div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
-            <td><div class="cell-content"></div><button onclick="openPopup()"><img src="img/internet.png" alt="internet" class="icon"><br>인터넷</td></button><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td><div class="cell-content" onclick="view_layer('layer4');"><img src="img/internet.png" alt="internet" class="icon"><br>인터넷</div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
         </tr>
         <tr>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -64,65 +55,72 @@
         <!-- 나머지 셀들은 이와 같은 방식으로 추가합니다. -->
         
     </table>
+                    
+<div id="layer1">
+휴지통
+<a href="#" onclick="close_layer('layer1');">닫기</a>
+</div>
 
-        
+<div id="layer2">
+폴더
+<a href="#" onclick="close_layer('layer2');">닫기</a>
+</div>
+
+<div id="layer3">
+내 컴퓨터
+<a href="#" onclick="close_layer('layer3');">닫기</a>
+</div>
+
+<div id="layer4">
+인터넷
+<a href="#" onclick="close_layer('layer4');">닫기</a>
+</div>
+      
+<div id="start_menu" style="position:absolute; left:246px; top:600px; width:400px; height:240px; z-index:0;display:none;">
+시작
+<a href="#" onclick="close_layer('start_menu');">닫기</a>
+</div>
+                   
+
+                    <div id="popupContainer" class="popupContainer">
+                        <div class="popupContent">
+                            <span class="close" onclick="closePopup()">&times;</span>
+                            <p>여기는 -- 입니다.^^</p>
+                            <!--팝업창 안에 다른 기능을 추가하려면 여기에-->
+                        </div>
+                    </div>
+
+<div id="contextMenu">
+        <ul>
+            <li>열기(O)</li>
+            <li>탐색(E)</li>
+            <li>찾기(F)...</li>
+            <div id="line"></div>
+            <li>네트워크 드라이브 연결(N)...</li>
+            <li>네트워크 드라이브 연결 해제(D)...</li>
+              <div id="line"></div>
+            <li>단축 아이콘 만들기(S)</li>
+            <li>이름 바꾸기(M)</li>
+              <div id="line"></div>
+            <li>등록 정보(R)</li>
+        </ul>
+</div>
+
     <footer>
-       <img id="start" src="img/start.png">
+        <div id="start" onclick="view_layer('start_menu');"><img src="img/start.png"></div>
        <div id="clock"></div>
     </footer>
     
-    
-    
-<script>
-$(function() {
-    // 각 .cell-content를 draggable로 만들기
-    $('.cell-content').draggable({
-        containment: 'table',
-        cursor: 'move',
-        revert: true
-    });
-
-    // 각 <td> 요소를 droppable 영역으로 설정하기
-    $('td').droppable({
-        drop: function(event, ui) {
-            // 드롭된 요소의 위치를 이동
-            var $droppedCell = $(this);
-            var $draggedElement = ui.draggable;
-
-            // 만약 셀 내에 이미지가 없는 경우에만 드롭을 허용
-            if (!$droppedCell.has('img').length) {
-                $droppedCell.append($draggedElement.css({
-                    top: 0,
-                    left: 0
-                }));
-            }
-        }
-    });
-});
-       
-      function showTime() {
-    var date = new Date(); // 현재 날짜와 시간을 가져옵니다.
-    // 현재 시간을 로케일 형식으로 변환하되, 옵션을 사용하여 시간과 분만 표시하고 초는 표시하지 않습니다.
-    var time = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-
-    document.getElementById('clock').innerText = time; // 'clock' ID를 가진 요소에 시간을 표시합니다.
-
-    setTimeout(showTime, 1000); // 1초마다 함수를 다시 실행합니다.
-}
-
-showTime(); // 실시간 시계를 시작합니다
-
-function openPopup() {
-    var popup = document.getElementById("popupContainer");
-    popup.style.display = "block";
-}
-
-function closePopup() {
-    var popup = document.getElementById("popupContainer");
-    popup.style.display = "none";
-}
-</script>
-      
-
+    </div>
 </body>
 </html>
+
+<script>
+    function view_layer(name){
+  document.getElementById(name).style.display='block';
+}
+
+function close_layer(name){
+  document.getElementById(name).style.display='none';
+}
+</script>
