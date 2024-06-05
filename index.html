@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배경화면 웹 페이지</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">           
     <!-- jQuery 및 jQuery UI 라이브러리 추가 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -62,7 +62,31 @@
 </div>
 
 <div id="layer2">
-폴더
+    <div class="win98popup">
+        <div class="bar">
+            <p>폴더</p>
+            <button class="shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8px" height="7px" viewBox="0 0 8 7" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path d="M1 6V5h1V4h1V3h2v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1zm0-4V1H0V0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H2V2H1z"/></svg>
+            </button>
+        </div>
+        <section>
+            <p>Save changes to untitled?</p>
+        </section>
+        <div class="buttons">
+            <button class="shadow">
+                <img src="https://raw.githubusercontent.com/mbledkowski/win98popup/master/outline.svg" alt="" width="66.9" height="15">
+                <p><u>Y</u>es</p>
+            </button>
+            <button class="shadow">
+                <img src="https://raw.githubusercontent.com/mbledkowski/win98popup/master/outline.svg" alt="" width="66.9" height="15">
+                <p><u>N</u>o</p>
+            </button>
+            <button class="shadow">
+                <img src="https://raw.githubusercontent.com/mbledkowski/win98popup/master/outline.svg" alt="" width="66.9" height="15">
+                <p>Cancel</p>
+            </button>
+        </div>
+    </div>
 <a href="#" onclick="close_layer('layer2');">닫기</a>
 </div>
 
@@ -72,12 +96,17 @@
 </div>
 
 <div id="layer4">
-인터넷
+인터넷<br>
+<ul>
+    <div id="line"></div><br>
+    <li><a href="https://www.naver.com" target="_blank">Naver</a><br></li>
+    <li><a href="https://www.google.co.kr" target="_blank">Google</a><br></li>
+</ul>
 <a href="#" onclick="close_layer('layer4');">닫기</a>
 </div>
       
 <div id="start_menu" style="position:absolute; left:246px; top:600px; width:400px; height:240px; z-index:0;display:none;">
-시작
+시작<br>
 <a href="#" onclick="close_layer('start_menu');">닫기</a>
 </div>
                    
@@ -111,7 +140,7 @@
        <div id="clock"></div>
     </footer>
     
-    </div>
+    </div>  
 </body>
 </html>
 

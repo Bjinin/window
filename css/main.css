@@ -58,7 +58,7 @@ td {
     width: 5vw;
     padding: 0;
     height: 13.5vh;
-    font-size: 1vw
+    font-size: 1vw;
 }
 .cell-content{
     text-align: center;
@@ -105,12 +105,18 @@ td {
 }
  #contextMenu {
             position: absolute;
-            background-color: #c3c3c3;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* background-color: #c3c3c3; */
+            /* border: 1px solid #ccc; */
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
             z-index: 1000;
-     border-bottom, border-right: solid 5px black;
-     color: black;
+            /* border-bottom:  solid 5px black; */
+            /* border-right: solid 5px black; */
+            background-color: #C0C0C0;
+            border-top: 1px solid #FFFFFF;
+            border-left: 1px solid #FFFFFF;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            
         }
 
         #contextMenu ul {
@@ -131,31 +137,131 @@ td {
 #line{
  border-bottom: solid 1px #818181;
 }
-#layer1{
-    background-color: #c3c3c3;
-    color: black;
-    position:absolute;
-    left:506px;
-    top:509px;
-    width:400px;
-    height:240px;
-    z-index:0;
-    display:none;
-}
-#layer2{
-    background-color: #c3c3c3;
-    color: black;
-    position:absolute;
-    left:26px;
-    top:409px;
-    width:400px;
-    height:240px;
-    z-index:0;
-    display:none;
-}
+#layer1 {
+            display: none;
+            position: absolute;
+            top: 509px;
+            left: 506px;
+            /* transform: translate(-50%, -50%); */
+            background-color: #C0C0C0;
+            border-top: 1px solid #FFFFFF;
+            border-left: 1px solid #FFFFFF;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); */
+            z-index: 0;
+            width: 400px;
+            height: 240px;
+            
+            /* background-color: #c3c3c3; */
+            /* color: black; */
+            /* position:absolute; */
+            /* left:506px; */
+            /* top:509px; */
+            /* width:400px; */
+            /* height:240px; */
+            /* z-index:0; */
+            /* display:none; */
+        }
+        
+#layer2 {
+            /* background-color: #c3c3c3; */
+            /* color: black; */
+            position:absolute;
+            left:26px;
+            top:409px;
+            width:400px;
+            height:240px;
+            z-index:0;
+            display:none;
+            background-color: #C0C0C0;
+            border-top: 1px solid #FFFFFF;
+            border-left: 1px solid #FFFFFF;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+        }
+        .win98popup {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center; 
+            font-family: "Microsoft Sans Serif", sans-serif; 
+            background: #c2c6ca;
+            font-size: 12px;
+            -webkit-font-smoothing: none;
+            width: 265px;
+            height: 118px;
+            box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white;
+        }
+        .win98popup button {
+            background: #c2c6ca;
+            border: none;
+            padding: 0;
+            border-radius: 0;
+            outline: none;
+        }
+        .win98popup .shadow {
+            box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px white, inset -1px -1px #85898d;
+        }
+        .win98popup .bar {
+            display: flex;
+            flex-flow: row nowrap;
+            font-weight: bold;
+            justify-content: space-between;
+            width: calc(100% - 11px);
+            height: 13px;
+            color: white;
+            background: #00a;
+            padding: 2px 3px 3px;
+            margin: 3px 2px 1px 3px;
+        }
+        .win98popup .bar p {
+            margin: 0;
+        }
+        .win98popup .bar button {
+            width: 15px;
+            height: 13px;
+        }
+        .win98popup .buttons {
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 1px 15px 14px 14px;
+        }
+        .win98popup .buttons button {
+            width: 74px;
+            height: 22px;
+            display: grid;
+            margin-right: 7px;
+        }
+        .win98popup .buttons button p {
+            font-size: 12px;
+            margin: auto;
+        }
+        .win98popup .buttons button img {
+            margin: 4px 3px 3px 4px;
+            display: none;
+        }
+        .win98popup .buttons button:focus {
+            outline: none;
+        }
+        .win98popup .buttons button:focus img {
+            display: block;
+        }
+        .win98popup .buttons button:focus p,
+        .win98popup .buttons button:focus img {
+            transform: translateX(1px) translateY(1px);
+        }
+        .win98popup .buttons button:active {
+            box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px black, inset -1px -1px #85898d, inset 2px 2px #85898d;
+            outline: none;
+        }
+        .win98popup .buttons button:active p,
+        .win98popup .buttons button:active img {
+            transform: translateX(1px) translateY(1px);
+        }
 #layer3{
-    background-color: #c3c3c3;
-    color: black;
+    /* background-color: #c3c3c3; */
+    /* color: black; */
     position:absolute;
     left:246px;
     top:5px;
@@ -163,10 +269,15 @@ td {
     height:240px;
     z-index:0;
     display:none;
+    background-color: #C0C0C0;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
 }
 #layer4{
-    background-color: #c3c3c3;
-    color: black;
+    /* background-color: #c3c3c3; */
+    /* color: black; */
     position:absolute;
     left:700px;
     top:109px;
@@ -174,4 +285,11 @@ td {
     height:240px;
     z-index:0;
     display:none;
+    background-color: #C0C0C0;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    font-size: 16px;
 }
+
